@@ -1,4 +1,0 @@
-added commit-notes.txt file to better track updates
-linked reset and style css files to index.html
-created skeleton of website
-implemented flexboxes to header and main content

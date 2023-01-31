@@ -1,16 +1,64 @@
+:root{
+    --purple: #461DAD;
+    --purpleLight: #5222C9;
+    --purpleBold: #652AFA;
+    --purpleDark: #3C1994;
+    
+}
+
+p{
+    font-size: 150%;
+}
+button{
+    background-color: var(--purple);
+    color: #fff;
+    transition: background-color 0.1s;
+    
+}
+
+button:hover{
+    background-color: var(--purpleLight);
+}
+
+button:active{
+    background-color: var(--purpleBold);
+}
 .header{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
 }
+.scores{
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size:1.7rem;
+    color: var(--purple);
+}
+.time{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.7rem;
+    color: var(--purple);
+}
+#start-screen{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
 .container{
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 2vh 15vw;
-    background-color: aliceblue;
 }
+.hidden{
+    display: none;
+}
+
 #title{
     margin: 100px auto;
     margin-bottom: 10px;
@@ -18,19 +66,7 @@
 }
 #start{
     width: 150px;
-    height: 50px;
+    height: 40px;
+    border-radius: 7.5%;
     font-size: 1.4rem;
-    text-decoration: underline;
-}
-#highscore{
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    font-size:1.7rem;
-}
-#timer{
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    font-size: 1.7rem;
 }

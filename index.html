@@ -14,16 +14,38 @@
 </head> 
 
 <body>
+	<header class="header">
+		<a href="#" class="scores">High Scores</a>
+		<div class="time">Time: <span id="timer"></span></div>
+	</header>
 	
-    
-		<a href="#" id="highscore">High Scores</a>
-		<div id="timer">Timer:</div>
 	
-	<main class="container">
-		<h1 id="title">Coding Quiz Challenge</h1>
-		<p>Try to answer the coding related questions within the time limit. Keep in mind incorrect answers will penalize your score/time by ten (10) seconds.</p>
-		<button id="start">Start Test</button>
-	</main>
+	<div class="container">
+
+		<div id="start-screen">
+			<h1 id="title">Coding Quiz Challenge</h1>
+			<p>Try to answer the following coding related questions within the time limit. Keep in mind your score/timer will be penalized for incorrect answers! </p>
+			<button id="start">Start Quiz</button>
+		</div>
+
+		<div id="questions" class="hidden">
+			<h2 id="questionTitle"></h2>
+			<div id="choices"></div>
+		</div>
+
+		<div id="end-screen" class="hidden">
+			<h2>All done!</h2>
+			<p>Your final score was <span id="score"></span>.</p>
+			<p>Enter Initials: 
+				<input type="text" id="initials" max=3>
+				<button id="confirm"> Confirm</button>
+			</p>
+		</div>
+
+	</div>
+	
+	<script src="./assets/js/questions.js"></script>
+	<script src="./assets/js/script.js"> </script>
 </body>
 
 </html>
