@@ -9,3 +9,9 @@ added div elements to reference for DOM manipulation
 added start quiz and timer functions
 ---------------------------------------------------------------
 
+implemented timer countdown functionality
+added code for questions and choice buttons using questions array data
+added logic to end quiz if out of time
+completed code for quiz
+started code to log scores
+---------------------------------------------------------------

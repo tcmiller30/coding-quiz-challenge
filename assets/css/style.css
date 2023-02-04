@@ -5,23 +5,45 @@
     --purpleDark: #3C1994;
     
 }
-
+h2{
+    font-size: 2.7rem;
+}
 p{
     font-size: 150%;
 }
 button{
+    margin: 5px;
+    width: 200px;
+    height: 50px;
+    border-radius: 7.5%;
+    font-size: 1.4rem;
     background-color: var(--purple);
     color: #fff;
     transition: background-color 0.1s;
     
 }
-
+/* changes button color and cursor to react to user input */
 button:hover{
     background-color: var(--purpleLight);
+    cursor: pointer;
 }
 
 button:active{
     background-color: var(--purpleBold);
+    cursor: pointer;
+}
+
+.choice-button{
+    display: block;
+}
+/* Changes button color to let the user know if they answered correctly or not */
+button.correct{
+    background-color: green;
+    display: block;
+}
+button.incorrect{
+    background-color: red;
+    display: block;
 }
 .header{
     display: flex;
@@ -29,32 +51,33 @@ button:active{
     justify-content: space-between;
     align-items: flex-start;
 }
+/* positions high scores link and timer countdown at the top of the screen */
 .scores{
     position: absolute;
     top: 15px;
     left: 15px;
-    font-size:1.7rem;
+    font-size:1.8rem;
     color: var(--purple);
 }
 .time{
     position: absolute;
     top: 15px;
     right: 15px;
-    font-size: 1.7rem;
+    font-size: 1.8rem;
     color: var(--purple);
 }
-#start-screen{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
+
 .container{
+    margin: 10% auto 10% auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 2vh 15vw;
+    max-width: 1000px;
+    min-width: 400px;
+    
+    
 }
+/* hides elements in DOM */
 .hidden{
     display: none;
 }
@@ -62,11 +85,11 @@ button:active{
 #title{
     margin: 100px auto;
     margin-bottom: 10px;
-    font-size: 3.2rem;
+    font-size: 4rem;
 }
 #start{
-    width: 150px;
-    height: 40px;
-    border-radius: 7.5%;
-    font-size: 1.4rem;
+    
+}
+#start-screen{
+    text-align: center;
 }
