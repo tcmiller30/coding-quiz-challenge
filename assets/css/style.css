@@ -3,6 +3,7 @@
     --purpleLight: #5222C9;
     --purpleBold: #652AFA;
     --purpleDark: #3C1994;
+    --purpleBG: #C6BCF7;
     
 }
 h2{
@@ -10,6 +11,13 @@ h2{
 }
 p{
     font-size: 150%;
+}
+li{
+    margin: 2px 0;
+    width: 800px;
+    font-size: 1.4rem;
+    background-color: var(--purpleBG);
+    list-style: decimal inside none;
 }
 button{
     margin: 5px;
@@ -45,12 +53,6 @@ button.incorrect{
     background-color: red;
     display: block;
 }
-.header{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-}
 /* positions high scores link and timer countdown at the top of the screen */
 .scores{
     position: absolute;
@@ -72,24 +74,31 @@ button.incorrect{
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 1000px;
+    max-width: 800px;
     min-width: 400px;
-    
-    
+}
+.hs-bg{
+    background-color: var(--purpleBG);
 }
 /* hides elements in DOM */
 .hidden{
     display: none;
 }
 
-#title{
-    margin: 100px auto;
+.title{
+    margin: auto;
     margin-bottom: 10px;
     font-size: 4rem;
 }
-#start{
+.return{
+    font-size: 1.5rem;
     
 }
+
 #start-screen{
     text-align: center;
+}
+
+#quiz-title{
+    margin-top: 100px;
 }

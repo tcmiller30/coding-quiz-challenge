@@ -2,8 +2,9 @@
 var highscoreEl = document.getElementById('highscore');
 var countdownEl = document.getElementById('countdown');
 var startBtn = document.getElementById('start');
-var submitBtn = document.getElementById('submit');
+var enterBtn = document.getElementById('enter');
 var choicesEl = document.getElementById('choices');
+var initialsEl = document.getElementById('initials');
 
 
 
@@ -75,6 +76,10 @@ function choiceClick(event){
     if(choiceEl.value !==  questions[questionsIndex].answer){
         //subtracts from score/remaining time
         time -= 10;
+
+        if(time < 0){
+            time = 0;
+        }
         countdownEl.textContent = time;
 
         //changes color of button for visual feedback
@@ -103,7 +108,6 @@ function checkQuiz(){
     } else{
         getQuestion();
     }
-    console.log(questionsIndex);
 }
 
 
@@ -133,26 +137,42 @@ function endQuiz(){
 }
 
 // ------------------------------------------- End Screen Form Logic -------------------------------------------
-function submitScore (){
-    var initials = document.getElementById('initials');
+function enterScore (){
+    
+    var initials = initialsEl.value.trim();
 
-    var newScore = {
+    if(initials !== ''){
+     var highscores = JSON.parse(window.localStorage.getItem('scores-list')) || [] ;
+     var userScore = {
         initials: initials,
         score: time,
     };
 
-    var highscore
+    
+     // write user input/score to local storage
+    highscores.push(userScore);
+    window.localStorage.setItem('scores-list', JSON.stringify(highscores));
+    window.location.href = 'highscores.html';
+    }
+   
+    
+}
 
-    // write user input/score to local storage
-
-
+function checkEnter(event){
+    if(event.keyup === 'Enter'){
+        enterScore();
+    }
 }
 
 
+// ------------------------------------------- onclick methods -------------------------------------------
+
 //Listens for button click 
-submitBtn.onclick = submitScore;
+enterBtn.onclick = enterScore;
 
 startBtn.onclick = startQuiz;
 
 choicesEl.onclick = choiceClick;
+
+initialsEl.onkeyup = checkEnter;
 
